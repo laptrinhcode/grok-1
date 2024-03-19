@@ -193,7 +193,7 @@ def restore(
     ckpt_shapes_with_path, structure = jax.tree_util.tree_flatten_with_path(ckpt_shapes)
 
     ckpt_shapes_flat = [elem[1] for elem in ckpt_shapes_with_path]
-    loaded_tensors = load_tensors(ckpt_shapes_flat, ckpt_path, between_hosts_config)
+    loaded_tensors = load_tension(ckpt_shapes_flat, ckpt_path, between_hosts_config)
 
     state = jax.tree_util.tree_unflatten(structure, loaded_tensors)
 
